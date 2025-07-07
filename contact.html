@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us - Fresh Fruits Store</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #fdf6ec;
+            margin: 0;
+        }
+        header, footer {
+            background-color: #ffa500;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background-color: #ffcc80;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            margin: 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .form-container {
+            padding: 30px;
+            max-width: 400px;
+            margin: auto;
+            background-color: #fff3e0;
+            border-radius: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 8px;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var name = document.forms["contactForm"]["name"].value;
+            var email = document.forms["contactForm"]["email"].value;
+            var message = document.forms["contactForm"]["message"].value;
+            if (name == "" || email == "" || message == "") {
+                alert("Please fill out all fields.");
+                return false;
+            } else {
+                alert("Message sent! Thank you " + name);
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>Contact Us</header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="fruits.html">Fruits</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="form-container">
+        <form name="contactForm" onsubmit="return validateForm()">
+            <label>Name:</label>
+            <input type="text" name="name">
+
+            <label>Email:</label>
+            <input type="email" name="email">
+
+            <label>Message:</label>
+            <textarea name="message" rows="4"></textarea>
+
+            <input type="submit" value="Send Message">
+        </form>
+    </div>
+
+    <footer>&copy; 2025 Fresh Fruits Store</footer>
+</body>
+</html>

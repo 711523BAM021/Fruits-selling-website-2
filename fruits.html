@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fruits - Fresh Fruits Store</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #fdf6ec;
+            margin: 0;
+        }
+        header, footer {
+            background-color: #ffa500;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background-color: #ffcc80;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            margin: 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .container {
+            display: flex; 
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .fruit-card {
+            background-color: #fff3e0;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            width: 200px;
+        }
+        .fruit-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+        }
+        #orderForm {
+            display: none;
+            padding: 20px;
+            max-width: 300px;
+            margin: auto;
+            background-color: #fff3e0;
+            border-radius: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px ;
+        }
+        button {
+            background-color: #ffa500;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>Fruits We Offer</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="fruits.html">Fruits</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="fruit-card">
+        <img src="https://ideogram.ai/assets/image/lossless/response/j0KYzqqYTQuIYN-MOs4m-g" alt="Apple">
+        <h3>Apple</h3>
+        <p>₹240/kg</p>
+        <button onclick="buyNow('Apple')">Buy Now</button>
+    </div>
+
+    <div class="fruit-card">
+        <img src="https://ideogram.ai/assets/progressive-image/balanced/response/U_fmmbsZQ5inj2oVlCLyXA" alt="Banana">
+        <h3>Banana</h3>
+        <p>₹60/kg</p>
+        <button onclick="buyNow('Banana')">Buy Now</button>
+    </div>
+    <div class="fruit-card">
+        <img src="https://ideogram.ai/assets/image/lossless/response/wA4eOcEjQvej_zXbvlY7OA" alt="Mango">
+        <h3>Mango</h3>
+        <p>₹150/kg</p>
+        <button onclick="buyNow('Mango')">Buy Now</button>
+    </div>
+    <div class="fruit-card">
+        <img src="https://ideogram.ai/assets/image/lossless/response/k76qEpfqTrm7rBh-EKG4RQ" alt="Strawberry">
+        <h3>Strawberry</h3>
+        <p>₹390/kg</p>
+        <button onclick="buyNow('Strawberry')">Buy Now</button>
+    </div>
+</div>
+
+<div id="orderForm">
+    <h3 id="formTitle">Order Form</h3>
+    <input type="text" id="custName" placeholder="Your Name" required>
+    <input type="email" id="custEmail" placeholder="Your Email" required>
+    <input type="text" id="custAddress" placeholder="Your Address" required>
+    <button onclick="submitForm()">Place Order</button>
+</div>
+
+<footer>&copy; 2025 Fresh Fruits Store</footer>
+
+<script>
+    var selectedFruit = "";
+
+    function buyNow(fruit) {
+        selectedFruit = fruit;
+        document.getElementById("formTitle").innerText = "Order " + fruit;
+        document.getElementById("orderForm").style.display = "block";
+    }
+
+    function submitForm() {
+        var name = document.getElementById("custName").value;
+        alert("Thank you " + name + "! Your order for " + selectedFruit + " has been placed.");
+        
+    }
+</script>
+
+</body>
+</html>
